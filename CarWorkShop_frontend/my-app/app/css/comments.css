@@ -1,0 +1,44 @@
+:root {
+    --primary-color: #1271ff;
+    --secondary-color: #12e7ff;
+    --text-color: #ffffff;
+    --background-dark: #121212;
+    --background-light: #ffffff;
+    --hover-color: #a0c4ff;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    transition: background var(--transition-speed), color var(--transition-speed);
+}
+.body-content {
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.circle {
+    width: 100px;
+    /* Set the width of the circle */
+    height: 100px;
+    /* Set the height of the circle */
+    background-color: #0070f3;
+    /* Set the background color */
+    border-radius: 50%;
+    /* Make it a circle */
+}

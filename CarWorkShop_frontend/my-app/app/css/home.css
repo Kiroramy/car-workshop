@@ -1,0 +1,241 @@
+/* نظام الألوان */
+:root {
+    --primary-color: #1271ff;
+    --secondary-color: #12e7ff;
+    --text-color: #ffffff;
+    --background-dark: #121212;
+    --background-light: #ffffff;
+    --hover-color: #a0c4ff;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --transition-speed: 0.3s;
+}
+
+
+
+
+
+
+/* الوضع الداكن */
+body.dark-mode {
+    background: var(--background-dark);
+    color: var(--text-color);
+}
+
+/* الوضع الفاتح */
+body.light-mode {
+    background: var(--background-light);
+    color: #333;
+}
+
+/* عموم الجسم */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+/* الحاوية الرئيسية */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* النافبار */
+.navbar {
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background var(--transition-speed);
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-item {
+    display: flex;
+    align-items: center;
+    transition: transform var(--transition-speed);
+}
+
+.navbar-item:hover {
+    transform: scale(1.1);
+}
+
+.navbar-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color var(--transition-speed);
+}
+
+.navbar-link:hover {
+    color: var(--hover-color);
+}
+
+/* الزر */
+.navbar-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background var(--transition-speed);
+}
+
+.navbar-button:hover {
+    background-color: var(--hover-color);
+}
+
+/* المحتوى */
+.body-content {
+    flex: 1;
+    padding: 20px;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+}
+
+/* بطاقة المنشور */
+.create-post,
+.post-card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    backdrop-filter: blur(10px);
+    transition: transform var(--transition-speed);
+
+}
+
+
+.create-post:hover,
+.post-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-author,
+.post-date,
+.post-caption {
+    color: var(--text-color);
+}
+
+
+.media-file-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /* مسافة بين الصور */
+    justify-content: space-between;
+    /* لضمان التوزيع المتساوي */
+}
+
+.media-file {
+    flex: 1 1 calc(50% - 10px);
+    /* يجعل كل صورة تأخذ نصف العرض مع الحفاظ على مسافة */
+    max-width: calc(50% - 10px);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.post-media-image {
+    width: 100%;
+    /* تأكد من أن الصورة تأخذ كامل عرض الحاوية */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.post-media-video {
+    width: 100%;
+    /* تأكد من أن الفيديو يأخذ كامل عرض الحاوية */
+    max-height: 450px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+/* استجابة الهاتف */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .mobile-content {
+        display: block;
+    }
+
+    .desktop-content {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-content {
+        display: none;
+    }
+
+    .desktop-content {
+        display: block;
+    }
+}
+/*phone */
+
+ @media (max-width: 768px) {
+     .post-card-phone {
+         width: 95%;
+         /* Adjust width for smaller screens */
+         padding: 10px;
+         /* Add some padding for mobile */
+     }
+
+     .post-header-phone {
+         flex-direction: column;
+         /* Stack avatar and text vertically */
+         align-items: center;
+         /* Center content on mobile */
+     }
+
+     .post-author-phone {
+         font-size: 18px;
+         /* Adjust font size for smaller screens */
+     }
+
+     .post-date-phone {
+         font-size: 14px;
+         /* Adjust font size for smaller screens */
+     }
+
+     .post-caption-phone {
+         font-size: 16px;
+         /* Adjust post caption for mobile readability */
+     }
+
+     .media-file-container-phone {
+         width: 100%;
+     }
+
+     .media-file-phone {
+         margin-bottom: 10px;
+         /* Space out media files on mobile */
+     }
+
+     .media-file-phone img,
+     .media-file-phone video {
+         width: 100%;
+         /* Make images and videos responsive */
+         height: auto;
+     }
+
+     .post-content-phone {
+         padding: 15px;
+         /* Add padding to content for better readability */
+     }
+
+     .post-header-phone {
+         padding: 10px 0;
+         /* Adjust header padding for mobile */
+     }
+ }
